@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tl2-tp7-2025-marta16g")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18caaf3206de60a1b178c81b38247da24a944b23")]
 [assembly: System.Reflection.AssemblyProductAttribute("tl2-tp7-2025-marta16g")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tl2-tp7-2025-marta16g")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

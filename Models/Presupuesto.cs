@@ -1,10 +1,11 @@
 using System;
+using System.Text.Json.Serialization;
 using EspacioPresupuestoDetalle;
 
 namespace EspacioPresupuesto
 {
 
-    class Presupuesto
+    public class Presupuesto
     {
         private int idPresupuesto;
         private string nombreDestinatario;
@@ -16,6 +17,16 @@ namespace EspacioPresupuesto
         public DateTime FechaCreacion { get => fechaCreacion; set => fechaCreacion = value; }
         public List<PresupuestoDetalle> Detalle { get => detalle; set => detalle = value; }
 
+
+        // [JsonConstructor]
+        // public Presupuesto(int idPresupuesto, string nombreDestinatario, DateTime fechaCreacion)
+        // {
+        //     this.idPresupuesto = idPresupuesto;
+        //     this.nombreDestinatario = nombreDestinatario;
+        //     this.fechaCreacion = fechaCreacion;
+        //     detalle = [];
+        // }
+
         public Presupuesto(int idPresupuesto, string nombreDestinatario, DateTime fechaCreacion, List<PresupuestoDetalle> detalle)
         {
             this.idPresupuesto = idPresupuesto;
@@ -24,19 +35,29 @@ namespace EspacioPresupuesto
             this.detalle = detalle;
         }
 
-        public float MontoPresupuesto()
+        public double MontoPresupuesto()
         {
-            return 0;
+            double total = 0;
+            foreach (var item in detalle)
+            {
+                total += item.Producto.Precio * item.Cantidad;
+            }
+            return total;
         }
 
-        public float MontoPresupuestoConIva()
+        public double MontoPresupuestoConIva()
         {
-            return 0;
+            return MontoPresupuesto() * 1.21;
         }
 
         public int CantidadProductos()
         {
-            return 0;
+            int cantProductos = 0;
+            foreach (var item in detalle)
+            {
+                cantProductos += item.Cantidad;
+            }
+            return cantProductos;
         }
     }
 }

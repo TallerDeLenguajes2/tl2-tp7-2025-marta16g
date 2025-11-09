@@ -6,12 +6,12 @@ namespace EspacioProducto
     {
         private int idProducto;
         private string descripcion;
-        private int precio;
+        private double precio;
 
         public int IdProducto { get => idProducto; set => idProducto = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public int Precio { get => precio; set => precio = value; }
-        public Producto(int idProducto, string descripcion, int precio)
+        public double Precio { get => precio; set => precio = value; }
+        public Producto(int idProducto, string descripcion, double precio)
         {
             this.idProducto = idProducto;
             this.descripcion = descripcion;
